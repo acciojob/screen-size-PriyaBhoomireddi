@@ -1,19 +1,25 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
 	<link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
 	<div id="sizeInfo">
 	<h1>Width: x and Height: y</h1>
 	</div>
-    <script type="text/javascript" src="./script.js">
-</script>
+    <script type="text/javascript">
+        function updateSizeInfo() {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            const sizeInfo = document.getElementById('sizeInfo');
+            sizeInfo.innerHTML = `<h1>Width: ${width} and Height: ${height}</h1>`;
+        }
 
+        // Initial call to set the size when the page loads
+        updateSizeInfo();
+
+        // Add event listener to update size whenever the window is resized
+        window.addEventListener('resize', updateSizeInfo);
+    </script>
 </body>
-
 </html>
